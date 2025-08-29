@@ -102,5 +102,15 @@
       </div>      
     </div>    
   </main>
+<div id="counter">Lượt truy cập: 0</div>
+
+<script>
+  // gọi API tăng và lấy lượt truy cập
+  fetch('https://api.countapi.xyz/hit/webprofilea12.github.io/turbo-octo-fortnight')
+    .then(response => response.json())
+    .then(data => {
+      document.getElementById('counter').innerText = "Lượt truy cập: " + data.value;
+    });
+</script>
 </body>
 </html>
