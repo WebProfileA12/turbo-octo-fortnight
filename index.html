@@ -105,11 +105,15 @@
 <div id="counter">Lượt truy cập: 0</div>
 
 <script>
-  // gọi API tăng và lấy lượt truy cập
-  fetch('https://api.countapi.xyz/hit/webprofilea12.github.io/turbo-octo-fortnight')
+  // Đặt namespace riêng, ví dụ: profilea12.github.io
+  fetch('https://api.countapi.xyz/hit/profilea12.github.io/visits')
     .then(response => response.json())
     .then(data => {
       document.getElementById('counter').innerText = "Lượt truy cập: " + data.value;
+    })
+    .catch(err => {
+      console.error("Lỗi khi gọi CountAPI:", err);
+      document.getElementById('counter').innerText = "Lượt truy cập: lỗi";
     });
 </script>
 </body>
